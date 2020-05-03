@@ -14,7 +14,7 @@ const handleRegister = (req, res, db, bcrypt) => {
 		.into('login')
 		.returning('email')
 		.then(loginEmail => {
-			return trx('users') // what's the purpose of return here?
+			return trx('users')
 			.returning('*')
 			.insert({
 				name: name,
